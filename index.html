@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Convertisseur sous LSD</title>
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- Le mot clé async permet de déclarer le script js dans le head et d'attendre la fin du chargement du document pour le charger ... -->
+        <script src="js/app.js" async></script>   
+    </head>
+    <body>
+        <header></header>
+
+        <main>
+            <form action="" method="post" id="form">
+                <div class="form-group">
+                    <select name="from" id="from">
+                        <!-- L'attribut (personnalisé) data-weight permettra de caluler le "poid" 'au sens mathématique) de la valeur entrée -->
+                        <!-- L'attribut (personnalisé) data-units permettra de vérifier que le calcul est possible, car même "type" de quantités -->
+                        <!-- les attributs data-(tiret)quelque chose sont personnalisés, on met ce que l'on veut,
+                            l'attribut sera disponible dans le "dataset" de l'elément -->
+
+                        <option value="0" data-weight="0" data-units=""></option>
+                        <option value="1" data-weight="1000" data-units="g">Kilogrammes</option>
+                        <option value="1" data-weight="1" data-units="kmh">Km/h</option>
+                        <option value="1" data-weight="0,0009144" data-units="kmh">Kilomètre</option>
+                    </select>
+
+                    <!-- Valeur à convertir -->
+                    <input type="text" name="input" id="input" placeholder="Entrez une valeur à convertir ?">
+                </div>
+
+                <div class="form-group">
+                    <select name="to" id="to">
+                        <!-- Idem que le select d'id "from", ce sera la quantité de destination de la conversion ... -->
+                        <option value="" data-weight="rien" data-units=""></option>
+                        <option value="1" data-weight="1" data-units="g">Grammes</option>
+                        <option value="1" data-weight="1.60934" data-units="kmh">Miles</option>
+                        <option value="1" data-weight="0,0009144" data-units="kmh">Yard</option>
+                    </select>
+
+                    <!-- Résultat de la conversion -->
+                    <input type="text" name="output" id="output">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-info w-100" id="btn">Convertir !</button>
+                </div>
+            </form>
+
+            <div class="message" id="message"></div>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
